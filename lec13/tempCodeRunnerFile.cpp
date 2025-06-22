@@ -1,0 +1,1 @@
+int arr[], int n , int key
