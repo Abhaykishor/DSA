@@ -2,11 +2,11 @@
 using namespace std;
 
 
-bool isPossible(int arry[] , int size ,int mid, int value){
+bool isPossible(int arr[] , int size ,int mid, int value){
   int sum = 0;
   for(int i=0; i<size; i++){
-     if(mid < arry[i]){
-       sum = sum + arry[i]-mid; 
+     if(mid < arr[i]){
+       sum = sum + arr[i]-mid; 
      }
      if(sum >= value){
      return true;
@@ -16,18 +16,18 @@ bool isPossible(int arry[] , int size ,int mid, int value){
 }
 
 
-int maxInt(int arry[] , int size , int value){
+int maxInt(int arr[] , int size , int value){
     int maxi = -1;
     int start = 0;
     for(int i=0; i<size; i++){
-      maxi = max(maxi,arry[i]);
+      maxi = max(maxi,arr[i]);
       }
     int end = maxi;
     int ans = 0;
     int mid = start + (end-start)/2;
     
     while(start<=end){
-        if(isPossible(arry,size,mid,value)){
+        if(isPossible(arr,size,mid,value)){
         ans = mid;
          start = mid+1;
         }else{
